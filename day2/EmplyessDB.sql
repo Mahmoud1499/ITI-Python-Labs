@@ -8,4 +8,6 @@ CREATE TABLE IF NOT EXISTS employee (
   age INTEGER,
   department TEXT,
   salary INTEGER
+  managed_department TEXT
+
 );
