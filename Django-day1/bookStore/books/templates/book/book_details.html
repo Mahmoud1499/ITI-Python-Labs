@@ -1,0 +1,22 @@
+{% extends 'main/base_layout.html' %}
+
+
+{% block main-content %}
+
+  	<div class="container my-5">
+				<div class="card">
+					<div class="card-body">
+						<h1 class="card-title">{{ book_title }}</h1>
+						<p class="card-text">By {{ book_author }}</p>
+						<p class="card-text"><strong>Published by:</strong> {{ book_publisher }}</p>
+						<p class="card-text"><strong>ISBN:</strong> {{ book_ISBN }}</p>
+						<p class="card-text"><strong>Price:</strong> ${{ book_price }}</p>
+						<p class="card-text">{{ book_description }}</p>
+					</div>
+				</div>
+	</div>
+
+ <a class="btn btn-primary"  href="{% url 'book:book-list' %}"> Back to List</a>
+{% endblock %}
+
+
