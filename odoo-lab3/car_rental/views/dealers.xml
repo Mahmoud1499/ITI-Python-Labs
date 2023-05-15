@@ -1,0 +1,65 @@
+<odoo>
+<data>
+
+<record id="dealer_tree_view" model="ir.ui.view">
+<field name="name">dealer.list</field>
+<field name="model">car.rental.dealers</field>
+<field name="arch" type="xml">
+    <tree string="dealers">
+    <field name="name"/>
+    <field name="active"/>
+    <field name="license_number"/>
+    <field name="license_expiration_date"/>
+</tree>
+
+</field>
+</record>
+
+
+<record id="dealer_search_view" model="ir.ui.view">
+<field name="name">dealer.search</field>
+<field name="model">car.rental.dealers</field>
+<field name="arch" type="xml">
+    <search string="dealers">
+    <field name="name"/>
+    <field name="active"/>
+    <field name="license_number"/>
+    <field name="license_expiration_date"/>
+</search>
+
+</field>
+</record>
+
+<record id="dealer_form_view" model="ir.ui.view">
+<field name="name">dealer.list</field>
+<field name="model">car.rental.dealers</field>
+<field name="arch" type="xml">
+    <form string="dealers">
+    <sheet>
+    <group>
+<field name="name"/>
+    <field name="active"/>
+    <field name="license_number"/>
+    <field name="license_expiration_date"/>
+    </group>
+
+    </sheet>
+    
+</form>
+
+</field>
+</record>
+
+<record id="car_rental_dealers_action" model="ir.actions.act_window">
+    <field name="name">dealers</field>
+    <field name="res_model">car.rental.dealers</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<menuitem id="master_data_menu" name="Configurations">
+    <menuitem id="dealers_model_menu_action" action="car_rental_dealers_action"/>
+ </menuitem>
+
+
+</data>
+
+</odoo>

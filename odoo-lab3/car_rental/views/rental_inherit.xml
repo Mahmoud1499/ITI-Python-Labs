@@ -1,0 +1,21 @@
+<odoo>
+
+    <data>
+
+        <record id="view_car_rental_sales_inherit" model="ir.ui.view">
+            <field name="name">car.form</field>
+            <field name="model">car.rental</field>
+            <field name="inherit_id"  ref="car_form_view" />
+            <field name="arch" type="xml" >
+            <xpath expr="//field[@name='licence_plate']" position="after">
+                <field name="car_id" />
+            </xpath>
+            
+            </field>
+
+        </record>
+
+    </data>
+
+
+</odoo>

@@ -1,0 +1,80 @@
+<odoo>
+    <data>
+
+        <record id="sales_tree_view" model="ir.ui.view">
+            <field name="name">driver.list</field>
+            <field name="model">car.rental.sales</field>
+            <field name="arch" type="xml">
+                <tree string="Rentals">
+                    <field name="name" />
+                    <field name="car" />
+                    <field name="driver" />
+                    <field name="customer" />
+                </tree>
+
+            </field>
+        </record>
+
+
+        <record id="sales_search_view" model="ir.ui.view">
+            <field name="name">driver.search</field>
+            <field name="model">car.rental.sales</field>
+            <field name="arch" type="xml">
+                <search string="Rentals">
+                    <field name="name" />
+                    <field name="car" />
+                    <field name="customer" />
+                    <field name="date" />
+                </search>
+
+            </field>
+        </record>
+
+        <record id="sales_form_view" model="ir.ui.view">
+            <field name="name">driver.list</field>
+            <field name="model">car.rental.sales</field>
+            <field name="arch" type="xml">
+                <form string="Rentals">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="car" />
+                            <field name="driver" />
+                            <field name="customer" />
+                            <field name="date" />
+                            <field name="price" />
+                        </group>
+
+                    </sheet>
+
+                </form>
+
+            </field>
+        </record>
+
+        <record id="view_car_rental_sales_pivot" model="ir.ui.view">
+            <field name="name">car.rental.sales.pivot</field>
+            <field name="model">car.rental.sales</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="date" type="col" />
+                    <field name="car" type="row" />
+                    <field name="price" type="measure" />
+                </pivot>
+            </field>
+        </record>
+
+        <record id="car_rental_sales_action" model="ir.actions.act_window">
+            <field name="name">Rentals</field>
+            <field name="res_model">car.rental.sales</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="master_data_menu" name="Cars Store Managment System">
+            <menuitem id="sales_model_menu_action" action="car_rental_sales_action" />
+        </menuitem>
+
+
+    </data>
+
+</odoo>
