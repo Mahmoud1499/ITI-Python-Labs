@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <!-- XML records for drivers' data -->
+        <record id="driver_data_1" model="drivers">
+            <field name="name">Mahmoud Mohamed</field>
+            <field name="active">True</field>
+            <field name="license_number">123456789</field>
+            <field name="license_expiration_date">2023-12-31</field>
+
+        </record>
+        <record id="driver_data_2" model="drivers">
+            <field name="name">Omar </field>
+            <field name="active">True</field>
+            <field name="license_number">123456789</field>
+            <field name="license_expiration_date">2023-12-31</field>
+
+            <!-- Add other fields as needed -->
+        </record>
+        <!-- Add more records for other drivers -->
+    </data>
+</odoo>

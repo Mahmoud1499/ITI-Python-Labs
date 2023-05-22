@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_car_rental_invoice"
+            model="car.rental.sales"
+            string="Rental Invoice"
+            report_type="qweb-pdf"
+            name="car_rental.report_car_rental_invoice"
+        />
+
+        <template id="report_car_rental_invoice">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="header">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h2>Car Rental Invoice</h2>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <p>
+                                    <strong>Invoice Number:</strong>
+                                    <span t-field="doc.name" />
+                                </p>
+                                <p>
+                                    <strong>Invoice Date:</strong>
+                                    <span t-field="doc.date" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Car</th>
+                                    <th>Driver</th>
+                                    <th>Date</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.rental_lines" t-as="line">
+                                    <td>
+                                        <span t-field="line.car" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.driver" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.date" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.price" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-right">
+                                        <strong>Total:</strong>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.total" />
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
