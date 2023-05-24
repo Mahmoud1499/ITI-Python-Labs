@@ -3,6 +3,7 @@
  ![image](https://github.com/Mahmoud1499/ITI-Python-Labs/assets/99666114/5b4e8c7f-4492-40a4-9d39-ce3fee5f529e)
 
 2.	Each book must be related to one or more category 
+
  ![image](https://github.com/Mahmoud1499/ITI-Python-Labs/assets/99666114/ed64c725-e36b-44e1-b0b6-429efb9475a6)
 
 3.	Each book has only one ISBN, and each ISBN belongs to one book 
