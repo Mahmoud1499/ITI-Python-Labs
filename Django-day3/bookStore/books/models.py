@@ -46,6 +46,11 @@ class Book(models.Model):
             raise ValidationErr(
                 'The length of a book title should be between 10 and 50 characters.')
 
+    class Meta:
+        permissions = [
+            ('book_delete', 'Can delete posts'),
+        ]
+
 
 class ISBN(models.Model):
     author = models.CharField(max_length=255, null=True, blank=True)

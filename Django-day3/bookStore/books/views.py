@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from .models import Book
 from django.views.decorators.csrf import csrf_exempt
 from .forms import BookForm
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views here.
 
@@ -18,6 +19,7 @@ def book_list(request):
     return render(request, 'book/book_list.html', context={"books": all_books})
 
 
+@login_required(login_url='login')
 def book_add(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
@@ -38,6 +40,7 @@ def book_detail(request, *args, **kwrgs):
     return render(request, 'book/book_details.html', context={"book": book})
 
 
+@permission_required('books.delete_post')
 def book_delete(request, **kwargs):
     book_id = kwargs.get('book_id')
 
